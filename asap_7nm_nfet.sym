@@ -87,7 +87,7 @@ device_model="tcleval(
 ************************************************************
 **)
 .control
-pre_osdi bsimcmg.osdi
+pre_osdi /home/vsduser/Documents/asap_7nm_Xschem/bsimcmg.osdi
 .endc
 
 )"

@@ -1,15 +1,20 @@
--Add offset: g3grau=ASCII 103+51+103+114+97+117=431
+-Add offset: g3grau=ASCII 103+51+103+114+97+117
   user_sum_in_mV=585mV ??? Number too large; where/how to apply it?
+  divide by 10 and add as offset to input pulse vlow/vhigh
+
 - What is the actual fin width Assuming NF/L[nm] ...
+
 ? Power for which switching frequency -> better use energy per cycle
   or normalize to 1Hz
+
 ? alter and alterparam+reset both don't change anything on the subckt models
     -> need to set via .param and alterparam and reset 
 
+# with offset:
 	Nfet	Pfet	V	A	W	ps		Hz
 No	W/L	W/L	Vth	Id	P@1Hz	tpd	Av	fmax
-1	14/7	14/7	345m	226u	1.18f	0.60	6.43	158G
-2	 7/7	 8/7	354m	120u	632f	0.76	6.43	156G
-3	 4/7	 6/7	373m	76.8u	408a	1.06	6.47	164G
-4	 1/7	 2/7	392m	21.4u	115a	1.45	6.55	165G
-5	20/7	20/7	345m	323u	1.69f	0.60	6.43	158G
+1	14/7	14/7	345m	226u	1.18f	0.60	6.43	157G
+2	 7/7	 8/7	354m	120u	622f	0.74	6.43	158G
+3	 4/7	 6/7	373m	76.8u	404a	1.06	6.47	170G
+4	 1/7	 2/7	392m	21.4u	114a	1.47	6.55	160G
+5	20/7	20/7	345m	323u	1.66f	0.60	6.43	157G
