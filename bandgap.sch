@@ -12,10 +12,30 @@ T {nfet 1 fin Rmin:4.35kOhm @ VGS=0.7V, 580uA@VDS=0.7V
      Vthlin(1u)=170mV
 
 } 60 360 0 0 0.4 0.4 {}
-T {VDD=0.7V
+T {VDD=0.7V tstart=57.4p
 Vconst = 249mV @ 25°C, 13.9uV/K
 Vref = 569mV @ 25°C, 1.1mV/K
-} 150 -490 0 0 0.4 0.4 {}
+} -10 -620 0 0 0.4 0.4 {}
+T {VDD=0.75V tstart=62.3p
+Vconst = 260mV @ 25°C, -7.4uV/K
+Vref = 629mV @ 25°C, 0.97mV/K
+} 0 -510 0 0 0.4 0.4 {}
+T {VDD=0.8V tstart=77.9p
+Vconst = 271mV @ 25°C, -17.7uV/K
+Vref = 689mV @ 25°C, 0.873mV/K
+} 430 -610 0 0 0.4 0.4 {}
+T {VDD=0.9V tstart=972p
+Vconst = 292mV @ 25°C, -42uV/K
+Vref = 806mV @ 25°C, 0.639mV/K
+} 420 -500 0 0 0.4 0.4 {}
+T {VDD=1.0V tstart=976p
+Vconst = 311mV @ 25°C, -56uV/K
+Vref = 917mV @ 25°C, 0.445mV/K
+} 880 -620 0 0 0.4 0.4 {}
+T {VDD=1.1V tstart=978p
+Vconst = 328mV @ 25°C, -61uV/K
+Vref = 1.03V @ 25°C, 0.304mV/K
+} 870 -510 0 0 0.4 0.4 {}
 N 100 -330 100 -280 {lab=#net1}
 N 140 -360 240 -360 {lab=v2}
 N 240 -360 240 -280 {lab=v2}
@@ -123,15 +143,17 @@ N 690 220 690 250 {lab=VDD}
 N 240 -210 280 -210 {lab=#net6}
 N -160 240 -60 240 {lab=#net8}
 N -160 300 -60 300 {lab=GND}
+N 620 -300 620 -290 {lab=v2}
+N 620 -390 620 -360 {lab=vdd}
 C {asap_7nm_pfet.sym} 120 -360 0 1 {name=pfet1 model=asap_7nm_pfet spiceprefix=X l=7n nfin=14}
-C {gnd.sym} -60 -250 0 0 {name=l3 lab=GND}
-C {lab_pin.sym} -60 -310 0 0 {name=p3 sig_type=std_logic lab=vdd}
+C {gnd.sym} -150 -270 0 0 {name=l3 lab=GND}
+C {lab_pin.sym} -150 -330 0 0 {name=p3 sig_type=std_logic lab=vdd}
 C {code_shown.sym} 1030 -390 0 0 {name=s1 only_toplevel=false value="
 
 .param vds = 0.7
 .param vgs = 0.1
 
-.param VDD = 0.7
+.param VDD = 0.8
 
 *.temp -40 0 40 80 120
 *.dc VDn 0 2 10m  VGn 0.0 0.7 0.05
@@ -143,6 +165,7 @@ C {code_shown.sym} 1030 -390 0 0 {name=s1 only_toplevel=false value="
     pre_osdi $ASAP7_OSDI
 .endc
 .control
+    *alter V1 value="\{VDD\}"
     dc temp -40 120 10
     plot Vref Vctat
     let vconst_slope_vs_temp = deriv(V(vctat))
@@ -156,9 +179,13 @@ C {code_shown.sym} 1030 -390 0 0 {name=s1 only_toplevel=false value="
 .control
     *run
     *temp -40 0 40 80 120
-    tran 1p 1n
+    tran 100p 100n
+    meas tran vref_final find V(vref) at=1n
+    let vtarget = vref_final * 0.99   ; 1% deviation
+    meas tran tstart find time when V(vref)=vtarget
+    let tstart = tstart - 120p    ; end of supply rise
     set xbrushwidth=3
-    plot Vref Vctat
+    plot Vref Vctat vdd
 .endc
 
 .control
@@ -177,7 +204,7 @@ C {code_shown.sym} 1030 -390 0 0 {name=s1 only_toplevel=false value="
 
     dc VDn 0 2 10m  VGn 0.0 0.7 0.05
     set xbrushwidth=3
-    plot -i(VDn)
+    *plot -i(VDn)
 .endc
 
 
@@ -218,7 +245,8 @@ C {lab_pin.sym} 770 -310 0 1 {name=p8 sig_type=std_logic lab=Vref}
 C {lab_pin.sym} 770 -200 0 1 {name=p15 sig_type=std_logic lab=Vctat
 }
 C {lab_pin.sym} 100 -360 0 0 {name=p4 sig_type=std_logic lab=vdd}
-C {lab_pin.sym} -10 -390 0 0 {name=p16 sig_type=std_logic lab=vdd}
+C {lab_pin.sym} -10 -390 0 0 {name=p16 sig_type=std_logic lab=vdd
+}
 C {lab_pin.sym} 320 -30 0 0 {name=p19 sig_type=std_logic lab=v3}
 C {lab_pin.sym} 520 -30 0 0 {name=p20 sig_type=std_logic lab=v4}
 C {asap_7nm_nfet.sym} 500 -170 0 0 {name=nfet9 model=asap_7nm_nfet spiceprefix=X l=7n nfin=48
@@ -239,7 +267,6 @@ C {gnd.sym} 800 80 0 1 {name=l6 lab=GND}
 C {gnd.sym} 940 80 0 0 {name=l7 lab=GND}
 C {lab_pin.sym} 410 -210 0 1 {name=p17 sig_type=std_logic lab=v1
 }
-C {vsource.sym} -60 -280 0 0 {name=V1 value="0.7" savecurrent=false   ;  pulse(0 2.5 20p 10n 10n 200n 500n 1)}
 C {vsource.sym} 100 -170 0 0 {name=V3 value=0}
 C {vsource.sym} 360 -90 0 0 {name=V4 value=0}
 C {vsource.sym} 520 -250 0 0 {name=V5 value=0}
@@ -280,3 +307,13 @@ m=1
 value=1n
 footprint=1206
 device="ceramic capacitor"}
+C {gnd.sym} -160 -160 0 0 {name=l13 lab=GND}
+C {capa.sym} 620 -330 0 0 {name=C2
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {vsource.sym} -160 -190 0 0 {name=V2 value="\{VDD\}" savecurrent=false   ;  pulse(0 \{VDD\} 20p 10n 10n 200n 500n 1)}
+C {vsource.sym} -150 -300 0 0 {name=V1 value="pulse(0 \{VDD\} 20p 100p 100p 200n 500n 1)" savecurrent=false   ;  pulse(0 \{VDD\} 20p 10n 10n 200n 500n 1)}
+C {lab_pin.sym} -160 -220 0 0 {name=p26 sig_type=std_logic lab=vdd_dc
+}
