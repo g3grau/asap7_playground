@@ -1,4 +1,4 @@
-** sch_path: /home/hprcse/Finfet/inverter_vtc.sch
+** sch_path: inverter_vtc.sch
 **.subckt inverter_vtc
 Xpfet1 nfet_out nfet_in vdd vdd asap_7nm_pfet l=7e-009 nfin=14
 Xnfet1 nfet_out nfet_in GND GND asap_7nm_nfet l=7e-009 nfin=14
@@ -90,7 +90,7 @@ V2 vdd GND 0.7
 ************************************************************
 **)
 .control
-pre_osdi /home/hprcse/Documents/test/bsimcmg.osdi
+pre_osdi bsimcmg.osdi
 .endc
 
 
@@ -163,7 +163,7 @@ pre_osdi /home/hprcse/Documents/test/bsimcmg.osdi
 ************************************************************
 **)
 .control
-pre_osdi /home/hprcse/Documents/test/bsimcmg.osdi
+pre_osdi bsimcmg.osdi
 .endc
 
 

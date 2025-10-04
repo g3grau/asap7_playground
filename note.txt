@@ -1,0 +1,19 @@
+export SPICEPATH=/home/vsduser/Documents/asap_7nm_Xschem
+export SPICE_LIB_DIR=/home/vsduser/Documents/asap_7nm_Xschem
+
+export XSCHEM_LIBRARY_PATH=/home/vsduser/Documents/asap_7nm_Xschem:/home/vsduser/asap7
+export XSCHEM_SHAREDIR=/home/vsduser/Documents/asap_7nm_Xschem:/home/vsduser/asap7
+
+edit .xschem rc file to include variables   set $::(NAME)  for xschem
+add control to netlist commands to include variable $NAME  for ngspice
+
+
+# edit nfet_chat.spice
+# remove absolute paths
+
+ngspice nfet_char.spice
+
+#10 load resistor curve
+plot id vs vd
+
+#11

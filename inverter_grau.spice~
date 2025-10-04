@@ -89,7 +89,7 @@ V2 vdd GND 0.7
 ************************************************************
 **)
 .control
-pre_osdi bsimcmg.osdi
+pre_osdi /home/hprcse/Documents/test/bsimcmg.osdi
 .endc
 
 

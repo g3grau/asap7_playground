@@ -29,8 +29,8 @@ N 120 80 170 80 {
 lab=nfet_in}
 N 210 90 310 90 {
 lab=nfet_out}
-C {/home/hprcse/asap_7nm_pfet.sym} 190 40 0 0 {name=pfet1 model=asap_7nm_pfet spiceprefix=X l=7e-009 nfin=14}
-C {/home/hprcse/asap_7nm_nfet.sym} 190 140 0 0 {name=nfet1 model=asap_7nm_nfet spiceprefix=X l=7e-009 nfin=14}
+C {asap_7nm_pfet.sym} 190 40 0 0 {name=pfet1 model=asap_7nm_pfet spiceprefix=X l=7e-009 nfin=14}
+C {asap_7nm_nfet.sym} 190 140 0 0 {name=nfet1 model=asap_7nm_nfet spiceprefix=X l=7e-009 nfin=14}
 C {gnd.sym} 210 220 0 0 {name=l1 lab=GND}
 C {lab_pin.sym} 210 -40 0 0 {name=p4 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 120 80 0 0 {name=p5 sig_type=std_logic lab=nfet_in}

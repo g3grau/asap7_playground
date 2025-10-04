@@ -1,4 +1,4 @@
-** sch_path: /home/hprcse/Finfet/nfet_char.sch
+** sch_path: nfet_char.sch
 **.subckt nfet_char
 V1 nfet_in GND 0
 V2 vdd GND 3
@@ -90,7 +90,7 @@ plot id
 ************************************************************
 **)
 .control
-pre_osdi /home/hprcse/Documents/test/bsimcmg.osdi
+pre_osdi bsimcmg.osdi
 .endc
 
 
