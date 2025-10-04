@@ -10,11 +10,13 @@
 ? alter and alterparam+reset both don't change anything on the subckt models
     -> need to set via .param and alterparam and reset 
 
+- NM = min(NMH,NML)
+
 # with offset:
-	Nfet	Pfet	V	A	W	ps		Hz
-No	W/L	W/L	Vth	Id	P@1Hz	tpd	Av	fmax
-1	14/7	14/7	345m	226u	1.18f	0.60	6.43	157G
-2	 7/7	 8/7	354m	120u	622f	0.74	6.43	158G
-3	 4/7	 6/7	373m	76.8u	404a	1.06	6.47	170G
-4	 1/7	 2/7	392m	21.4u	114a	1.47	6.55	160G
-5	20/7	20/7	345m	323u	1.66f	0.60	6.43	157G
+	Nfet	Pfet	V	A	W	ps		Hz	A/V	V
+No	W/L	W/L	Vth	Id	P@1Hz	tpd	Av	fmax	gm	NM
+1	14/7	14/7	345m	226u	1.18f	0.60	6.43	157G	1.16m	168m
+2	 7/7	 8/7	354m	120u	622f	0.74	6.43	158G	596u	180m
+3	 4/7	 6/7	373m	76.8u	404a	1.06	6.47	170G	359u	151m
+4	 1/7	 2/7	392m	21.4u	114a	1.47	6.55	160G	93.9u	124m
+5	20/7	20/7	345m	323u	1.66f	0.60	6.43	157G	1.6m	168m

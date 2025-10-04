@@ -78,7 +78,8 @@ C {code_shown.sym} 430 20 0 0 {name=s1 only_toplevel=false value="
     meas dc vol find nfet_out when gain_av = gain_target cross=2
     let nmh = voh - vih
     let nml = vil - vol
-    print v_th max_gain vil voh vih vol nmh nml 
+    let nm = min(nmh,nml)
+    print v_th max_gain vil voh vih vol nmh nml  nm
     * get gain>1 regions (for noise margin)
     
     * Transconductance  .. handle with care .. do these definitions make any sense?
