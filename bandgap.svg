@@ -1,0 +1,111 @@
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+  width="100%" height="100%" viewBox="0 0 1024 768"
+  style="fill: none; stroke-width: 3; font-family: Helvetica;
+ font: Helvetica;
+">
+
+<!-- Creator: NGspice -->
+
+<rect x="0" y="0" width="1024" height="768" fill="black" stroke="none"/>
+<text stroke="none" fill="white" font-size="16" x="358" y="752">
+temp-sweep
+</text>
+<text stroke="none" fill="white" font-size="16" x="10" y="16">
+dc1: ** sch_path: /media/sf_sharedlnx/asap_7nm_xschem/bandgap.sch
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M70 720l0 -666"/>
+<text stroke="none" fill="white" font-size="16" x="45" y="728">
+-40.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M180 720l0 -666"/>
+<text stroke="none" fill="white" font-size="16" x="155" y="728">
+-20.0
+</text>
+<path stroke="white" stroke-width="3" d="M290 720l0 -666"/>
+<text stroke="none" fill="white" font-size="16" x="275" y="728">
+0.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M400 720l0 -666"/>
+<text stroke="none" fill="white" font-size="16" x="380" y="728">
+20.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M510 720l0 -666"/>
+<text stroke="none" fill="white" font-size="16" x="490" y="728">
+40.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M620 720l0 -666"/>
+<text stroke="none" fill="white" font-size="16" x="600" y="728">
+60.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M730 720l0 -666"/>
+<text stroke="none" fill="white" font-size="16" x="710" y="728">
+80.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M840 720l0 -666"/>
+<text stroke="none" fill="white" font-size="16" x="815" y="728">
+100.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M950 720l0 -666"/>
+<text stroke="none" fill="white" font-size="16" x="925" y="728">
+120.0
+</text>
+<text stroke="none" fill="white" font-size="16" x="614" y="752">
+Celsius
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M70 720l880 0"/>
+<text stroke="none" fill="white" font-size="16" x="18" y="728">
+200.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M70 646l880 0"/>
+<text stroke="none" fill="white" font-size="16" x="18" y="654">
+250.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M70 572l880 0"/>
+<text stroke="none" fill="white" font-size="16" x="18" y="580">
+300.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M70 498l880 0"/>
+<text stroke="none" fill="white" font-size="16" x="18" y="506">
+350.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M70 424l880 0"/>
+<text stroke="none" fill="white" font-size="16" x="18" y="432">
+400.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M70 350l880 0"/>
+<text stroke="none" fill="white" font-size="16" x="18" y="358">
+450.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M70 276l880 0"/>
+<text stroke="none" fill="white" font-size="16" x="18" y="284">
+500.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M70 202l880 0"/>
+<text stroke="none" fill="white" font-size="16" x="18" y="210">
+550.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M70 128l880 0"/>
+<text stroke="none" fill="white" font-size="16" x="18" y="136">
+600.0
+</text>
+<path stroke="white" stroke-width="3" stroke-dasharray="1,2" d="M70 54l880 0"/>
+<text stroke="none" fill="white" font-size="16" x="18" y="62">
+650.0
+</text>
+<text stroke="none" fill="white" font-size="16" x="10" y="32">
+mV
+</text>
+<path stroke="red" d="M440 23l44 0"/>
+<text stroke="none" fill="white" font-size="16" x="494" y="32">
+vref
+</text>
+<path stroke="red" d="M70 304l110 -44 110 -42 55 -19 110 -34 55 -14 55 -15 55 -13 55 -11 55 -10 55 -9 55 -8 110 -12"/>
+<path stroke="blue" d="M70 23l44 0"/>
+<text stroke="none" fill="white" font-size="16" x="124" y="32">
+vctat
+</text>
+<path stroke="blue" d="M70 654l55 -2 220 -4 55 0 55 -1 55 1 110 0 165 3 55 2 55 1 55 2"/>
+</svg>

@@ -154,6 +154,14 @@ C {code_shown.sym} 1030 -390 0 0 {name=s1 only_toplevel=false value="
 .endc
 
 .control
+    *run
+    *temp -40 0 40 80 120
+    tran 1p 1n
+    set xbrushwidth=3
+    plot Vref Vctat
+.endc
+
+.control
     * fet characteristics
     alter VDn 0.7
     dc VGn 0 0.7 1m  
@@ -167,18 +175,12 @@ C {code_shown.sym} 1030 -390 0 0 {name=s1 only_toplevel=false value="
     *plot -i(VDn)
     meas dc Vth_lin when id = 100n from = 0 to = 0.7
 
+    dc VDn 0 2 10m  VGn 0.0 0.7 0.05
     set xbrushwidth=3
-    *plot Vref Vctat
+    plot -i(VDn)
 .endc
 
 
-.control
-    *run
-    *temp -40 0 40 80 120
-    tran 1p 1n
-    set xbrushwidth=3
-    plot Vref Vctat
-.endc
 "}
 C {asap_7nm_pfet.sym} 120 -250 0 1 {name=pfet2 model=asap_7nm_pfet spiceprefix=X l=7n nfin=14}
 C {asap_7nm_pfet.sym} 220 -250 0 0 {name=pfet3 model=asap_7nm_pfet spiceprefix=X l=7n nfin=28
