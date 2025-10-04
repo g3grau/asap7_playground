@@ -1,2 +1,0 @@
-export SPICEPATH=/home/vsduser/Documents/asap_7nm_Xschem
-ngspice nfet_char.spice
